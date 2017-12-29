@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Χριστουγεννιάτικες Θερμίδες</title>
+		<meta name="description" content="Υπολογισμός Χριστουγεννιάτικών Θερμίδων">
+		<meta name="theme-color" content="#A7998B">
+		<link rel="manifest" href="manifest.webmanifest">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+		<style>
+			body {
+				height: 100vh;
+				background: url('./images/glyka.jpg') no-repeat center center fixed;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				background-size: cover;
+				-o-background-size: cover;
+			}
+
+			#main {
+				background: hsla(0,0%,96%,0.90);
+			}
+		</style>
+  </head>
+  <body>
+
+		<main id="main" class="my-3 p-4 container mv-app mv-bar="none>
+
+			<header class="mb-4">
+				<h2 class="text-center">Υπολογισμός Χριστουγεννιάτικων Θερμίδων</h2>
+			</header>
+			
+			<!-- Δεδομένα -->
+			<div class="mb-4">
+				<h5 class="mb-4">Πόσα γλυκά έχετε φάει;</h5>
+				<form class="row">
+					<div class="form-group col-md-4">
+						<label for="mel">Μελομακάρονα:</label>
+						<input type="number" min="0" step="1" class="form-control" id="mel" property>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="kou">Κουραμπιέδες:</label>
+						<input type="number" min="0" step="1" class="form-control" id="kou" property>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="dip">Δίπλες:</label>
+						<input type="number" min="0" step="1" class="form-control" id="dip" property>
+					</div>
+				</form>
+			</div>
+
+			<!-- Αποτελέσματα -->
+			<div class="px-4">
+
+				<p class="lead text-danger d-flex justify-content-between align-items-center">
+					Σύνολο θερμίδων από μελομακάρονα, κουραμπιέδες και δίπλες:
+					<span property="totcal" class="text-right">[melcal + koucal + dipcal]</span>
+				</p>
+
+				<p class="d-flex justify-content-between align-items-center">
+					Θερμίδες από μελομακάρονα:
+					<span property="melcal" class="text-right">[mel * 180]</span>
+				</p>
+
+				<p class="d-flex justify-content-between align-items-center">
+					Θερμίδες από κουραμπιέδες:
+					<span property="koucal" class="text-right">[kou * 230]</span>
+				</p>
+
+				<p class="d-flex justify-content-between align-items-center">
+					Θερμίδες από δίπλες:
+					<span property="dipcal" class="text-right">[dip * 95]</span>
+				</p>
+			</div>
+
+			<!-- Μήνυμα -->
+			<div class="border border-danger rounded font-weight-bold lead p-1 text-center text-danger" mv-if="totcal >= 2000">
+				<p></p>Το παράκανες, κάνε κράτει!</p>
+			</div>
+
+		</main>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+		<script src="https://get.mavo.io/mavo.es5.min.js"></script>
+
+		<script>
+			//This is the "Offline page" service worker
+
+			//Add this below content to your HTML page, or add the js file to your page at the very top to register sercie worker
+			if (navigator.serviceWorker.controller) {
+				console.log('[PWA Builder] active service worker found, no need to register')
+			} else {
+				//Register the ServiceWorker
+				navigator.serviceWorker.register('pwabuilder-sw.js', {
+					scope: './'
+				}).then(function(reg) {
+					console.log('Service worker has been registered for scope:'+ reg.scope);
+				});
+			}
+		</script>
+  </body>
+</html>
