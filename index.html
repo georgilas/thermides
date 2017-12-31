@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Χριστουγεννιάτικες Θερμίδες</title>
 		<meta name="description" content="Υπολογισμός Χριστουγεννιάτικών Θερμίδων">
+		<meta name="author" content="Anthony S. Georgilas">
 		<meta name="theme-color" content="#A7998B">
 		<link rel="canonical" href="https://thermides.netlify.com/">
 		<link rel="manifest" href="manifest.webmanifest">
@@ -90,14 +91,15 @@
 		<script src="https://get.mavo.io/mavo.es5.min.js"></script>
 
 		<script>
-			//This is the "Offline page" service worker
+			//This is the service worker with the Cache-first network
 
 			//Add this below content to your HTML page, or add the js file to your page at the very top to register sercie worker
 			if (navigator.serviceWorker.controller) {
 				console.log('[PWA Builder] active service worker found, no need to register')
 			} else {
-				//Register the ServiceWorker
-				navigator.serviceWorker.register('pwabuilder-sw.js', {
+
+			//Register the ServiceWorker
+				navigator.serviceWorker.register('sw.js', {
 					scope: './'
 				}).then(function(reg) {
 					console.log('Service worker has been registered for scope:'+ reg.scope);
