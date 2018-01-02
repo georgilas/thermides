@@ -7,7 +7,7 @@
   "background_color": "transparent",
   "display": "standalone",
   "orientation": "any",
-  "Scope": "/",
+  "Scope": ".",
   "start_url": "https://thermides.netlify.com/",
   "icons": [
     {
