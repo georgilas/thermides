@@ -8,7 +8,7 @@
   "display": "standalone",
   "orientation": "any",
   "Scope": ".",
-  "start_url": "https://thermides.netlify.com/",
+  "start_url": "/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
