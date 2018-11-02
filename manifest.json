@@ -1,13 +1,13 @@
 {
   "dir": "ltr",
   "lang": "el",
-  "name": "Christmas Calories Calculator",
-  "short_name": "XmasCalCalc",
+  "name": "Θερμίδες",
+  "short_name": "Θερμίδες",
   "theme_color": "#A7998B",
   "background_color": "#A7998B",
   "display": "standalone",
   "orientation": "any",
-  "start_url": "/index.html",
+  "start_url": "/",
   "icons": [
     {
       "src": "/images/icons/icon-72x72.png",
