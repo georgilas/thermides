@@ -4,7 +4,7 @@
   "name": "Christmas Calories Calculator",
   "short_name": "XmasCalCalc",
   "theme_color": "#A7998B",
-  "background_color": "transparent",
+  "background_color": "#A7998B",
   "display": "standalone",
   "orientation": "any",
   "start_url": "/index.html",
